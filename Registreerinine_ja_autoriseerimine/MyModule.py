@@ -115,7 +115,7 @@ def muuda_parool(n:list,p:list)->any:
     while True:
         muutmine=input("Kas soovid muuta nime (N) või parooli (P)?: ").capitalize()
         if muutmine=="N":
-            uus_nimi=input("Sisesta uus nimi: ").capitalize()
+            uus_nimi=input("Sisesta uus nimi: ")
             if uus_nimi=="":
                 print("Nimi ei saa olla tühi.")
                 print("")
