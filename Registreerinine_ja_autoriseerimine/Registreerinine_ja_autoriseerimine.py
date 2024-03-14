@@ -13,7 +13,7 @@ while True:
         muuda_parool(nimed,paroolid)
         print(nimed,paroolid)
     elif vastus=="U":
-        unustatud_parool(nimed,paroolid,salasonad)
+        unustatud_parool(nimed,paroolid)
     elif vastus=="L":
         break
     else:
