@@ -13,7 +13,6 @@ while True:
         autoriseerimine("Kasutaja_Parool.txt")
     elif vastus=="M":
         muuda_parool(nimed,paroolid)
-        print(nimed,paroolid)
     elif vastus=="U":
         unustatud_parool()
     elif vastus=="L":
