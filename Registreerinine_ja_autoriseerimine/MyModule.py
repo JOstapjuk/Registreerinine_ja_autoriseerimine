@@ -9,8 +9,8 @@ def kirjuta_failisse(fail:str, järjend=[], järjend2=[]):
     """
     existing_data = []
     try:
-        with open(fail, 'r', encoding="utf-8") as f:
-            for line in f:
+        with open(fail, 'r', encoding="utf-8") as v:
+            for line in v:
                 existing_data.append(line.strip())
     except FileNotFoundError:
         pass
