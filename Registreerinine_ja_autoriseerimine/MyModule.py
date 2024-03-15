@@ -24,20 +24,28 @@ def kirjuta_failisse(fail:str, järjend=[], järjend2=[]):
                 f.write(entry)
     return järjend
 
-# def kirjuta_failisse(fail:str,järjend=[],järjend2=[]):
-#     """ Funktsion ümber kirjutab andmed failisse
+#def kirjuta_failisse(fail:str,järjend=[],järjend2=[]):
+#    """ Funktsion ümber kirjutab andmed failisse
 #     :param str fail: Faili nimi
 #     :param list järjend: esimene järjend
 #     :param list järjend2: teine järjend
 #     :rtype: any
-#     """                                                      с этим кодом он записывал первого пользователя 2 раза при попытке записать второго пользователя
-#     f=open(fail,'a',encoding="utf-8")
-#     for i in range(len(järjend)):
-#         nimi=str(järjend[i])
-#         parool=str(järjend2[i])
-#         f.write(nimi + ": " + parool + "\n")
-#     f.close()
-#     return järjend
+#    """
+#    existing_data = []
+#    try:
+#        with open(fail, 'r', encoding="utf-8") as v:
+#            for line in v:
+#                existing_data.append(line.strip())
+#    except FileNotFoundError:
+#        pass
+
+#    f=open(fail,'a',encoding="utf-8")
+#    for i in range(len(järjend)):
+#        nimi=str(järjend[i])
+#        parool=str(järjend2[i])
+#        f.write(nimi + ": " + parool + "\n")
+#    f.close()
+#    return järjend
 
 def loe_pas_ja_log(fail:str)->any:
     """ Loeb failist andmed, mis oli sisestatud formaadis "nimi:parool" igas reas eraldi
@@ -140,7 +148,7 @@ def autoriseerimine(fail: str) -> bool:
             print("Sellist kasutajanime ei eksisteeri!")
             print("")
         
-def muuda_parool(n: list, p: list) -> None:
+def muuda_parool(n: list, p: list) -> any:
     """
     Muudab kasutaja parooli või nime.
 
@@ -172,10 +180,11 @@ def muuda_parool(n: list, p: list) -> None:
                 print("")
                 continue
             else:
-                n.pop(index)
-                p.pop(index)
-                n.append(uus_nimi)
-                p.append(pas[index])
+                log.pop(index)
+                pas.pop(index)
+                log.append(uus_nimi)
+                pas.append(pas[index])
+                kirjuta_failisse("Kasutaja_Parool.txt",log,pas)
                 print("Nimi edukalt muudetud.")
                 print("")
                 break
@@ -186,15 +195,16 @@ def muuda_parool(n: list, p: list) -> None:
                 print("")
                 continue
             else:
-                p.pop(index)
-                p.append(uus_parool)
+                pas.pop(index)
+                pas.append(uus_parool)
+                kirjuta_failisse("Kasutaja_Parool.txt",log,pas)
                 print("Parool edukalt muudetud.")
                 print("")
                 break
         else:
             print("Vigane valik. Palun vali 'N' või 'P'.")
             print("")
-        kirjuta_failisse("Kasutaja_Parool.txt", n, p)
+        
             
 #fdgc ebmv xelp cunt 
             
