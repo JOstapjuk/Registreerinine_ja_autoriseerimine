@@ -142,10 +142,10 @@ def autoriseerimine(fail: str) -> bool:
         
 def muuda_parool(n: list, p: list) -> None:
     """
-    Меняет пароль пользователя или его имя.
+    Muudab kasutaja parooli või nime.
 
-    :param list n: Список имен
-    :param list p: Список паролей
+    :param list n: Nimi järjend
+    :param list p: Parool järjend
     """
     log, pas = loe_pas_ja_log("Kasutaja_Parool.txt")
 
