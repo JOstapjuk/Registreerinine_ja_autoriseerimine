@@ -180,10 +180,7 @@ def muuda_parool(n: list, p: list) -> any:
                 print("")
                 continue
             else:
-                log.pop(index)
-                pas.pop(index)
-                log.append(uus_nimi)
-                pas.append(pas[index])
+                log[index]=uus_nimi
                 kirjuta_failisse("Kasutaja_Parool.txt",log,pas)
                 print("Nimi edukalt muudetud.")
                 print("")
@@ -195,8 +192,7 @@ def muuda_parool(n: list, p: list) -> any:
                 print("")
                 continue
             else:
-                pas.pop(index)
-                pas.append(uus_parool)
+                pas[index]=uus_parool
                 kirjuta_failisse("Kasutaja_Parool.txt",log,pas)
                 print("Parool edukalt muudetud.")
                 print("")
